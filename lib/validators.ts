@@ -1,3 +1,4 @@
+import { trace } from "console";
 import { z } from "zod";
 
 export const ItemCategoryEnum = z.enum(["service", "product"]);
@@ -29,6 +30,7 @@ export const UpdateAppointmentStatusInput = z.object({
 });
 
 export const CreateTransactionInput = z.object({
+  id: z.string().uuid(),
   branchId: z.string().uuid(),
   customerId: z.string().uuid().nullish(),
   cashierId: z.string().uuid().nullish(),
@@ -37,9 +39,10 @@ export const CreateTransactionInput = z.object({
   items: z
     .array(
       z.object({
+        transactionId: z.string().uuid(),
         itemId: z.string().uuid(),
         quantity: z.number().int().positive(),
-        priceAtSale: z.number().nonnegative(),
+        priceAtSale: z.string(), // using string to avoid floating point issues, will be converted to decimal in DB
       }),
     )
     .default([]),

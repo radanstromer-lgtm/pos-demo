@@ -73,6 +73,7 @@ export async function POST(req: NextRequest) {
   if (body.items.length > 0) {
     await db.insert(schema.transactionItems).values(
       body.items.map((it) => ({
+        id: crypto.randomUUID(),
         transactionId: insertData.id,
         itemId: it.itemId,
         quantity: it.quantity,
