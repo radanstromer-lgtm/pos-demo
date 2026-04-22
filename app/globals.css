@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Manrope:wght@300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 10 33% 98%;
+  --foreground: 340 15% 25%;
+  --border: 340 15% 90%;
+  --input: 340 15% 85%;
+  --ring: 345 35% 50%;
+  --card: 0 0% 100%;
+  --card-foreground: 340 15% 25%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 340 15% 25%;
+  --primary: 345 35% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 150 15% 65%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 340 15% 94%;
+  --muted-foreground: 340 10% 50%;
+  --accent: 345 20% 92%;
+  --accent-foreground: 345 35% 40%;
+  --destructive: 0 60% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --chart-1: 345 35% 50%;
+  --chart-2: 150 15% 65%;
+  --chart-3: 35 40% 65%;
+  --chart-4: 200 20% 60%;
+  --chart-5: 340 20% 70%;
+  --sidebar: 10 33% 98%;
+  --sidebar-foreground: 340 15% 25%;
+  --sidebar-border: 340 15% 90%;
+  --sidebar-primary: 345 30% 50%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 345 20% 92%;
+  --sidebar-accent-foreground: 345 30% 30%;
+  --sidebar-ring: 345 30% 50%;
+  --app-font-sans: 'Manrope', sans-serif;
+  --app-font-serif: 'Playfair Display', serif;
+  --radius: 1rem;
+}
+
+.dark {
+  --background: 340 10% 12%;
+  --foreground: 10 33% 95%;
+  --border: 340 10% 25%;
+  --input: 340 10% 25%;
+  --ring: 345 35% 60%;
+  --card: 340 10% 15%;
+  --card-foreground: 10 33% 95%;
+  --popover: 340 10% 15%;
+  --popover-foreground: 10 33% 95%;
+  --primary: 345 35% 60%;
+  --primary-foreground: 340 10% 12%;
+  --secondary: 150 15% 55%;
+  --secondary-foreground: 340 10% 12%;
+  --muted: 340 10% 20%;
+  --muted-foreground: 340 10% 70%;
+  --accent: 340 10% 25%;
+  --accent-foreground: 10 33% 95%;
+  --destructive: 0 60% 40%;
+  --destructive-foreground: 0 0% 100%;
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply font-sans antialiased bg-background text-foreground; }
+  h1, h2, h3, h4, h5, h6 { @apply font-serif tracking-tight; }
+}
